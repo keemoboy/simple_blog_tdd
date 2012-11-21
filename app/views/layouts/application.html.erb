@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SimpleBlog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!--   <div>
+  	<h2>Debug Info</h2>
+  	<p><%= session.inspect %></p>
+  </div> -->
+	<% if flash[:notice] %>
+	  <p class="notice">Last action:<%= flash[:notice] %></p>
+	<% end %>
+  <div class="container">
+    <%= render 'layouts/header' %>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

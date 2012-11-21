@@ -1,0 +1,740 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateArticles (20121027202229)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121027202229')[0m
+  [1m[35m (23.4ms)[0m  commit transaction
+Migrating to CreateComments (20121027213058)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121027213058')[0m
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to AddSessionsTable (20121109200444)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_sessions_on_session_id')
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121109200444')
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("articles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_sessions_on_session_id')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.0ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (24.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.1ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.4ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.2ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.7ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.5ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.1ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.4ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.8ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.6ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (25.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.0ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.8ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (19.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.7ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-20 16:16:39 -0800
+Connecting to database specified by database.yml
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Compiled articles.css  (1ms)  (pid 77318)
+Compiled application.css  (1695ms)  (pid 77318)
+Compiled jquery.js  (4ms)  (pid 77318)
+Compiled jquery_ujs.js  (0ms)  (pid 77318)
+Compiled articles.js  (370ms)  (pid 77318)
+Compiled application.js  (436ms)  (pid 77318)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 2283ms (Views: 2265.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /articles.css - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2012-11-20 16:16:41 -0800
+Served asset /articles.js - 200 OK (1ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Eius nemo dolores a consequatur. Voluptas quisquam ut numquam ut unde eaque. Odit ad quia reprehenderit incidunt rem omnis similique. Voluptatem in nulla architecto et saepe non eum. Est aspernatur alias ut non non quia.<p></p>Temporibus autem porro itaque sequi. Quasi asperiores magnam possimus deserunt. Veritatis explicabo nam quo. Vel laboriosam culpa. Sint sequi ullam porro.<p></p>Fugiat ex rem. Magnam sint dolores tempore voluptas quae. Sunt rem aut quia dignissimos.<p></p>Quia qui eaque aut nostrum. Sit laborum id quibusdam iure. Earum dolorum enim iste et. Est dolorem non.<p></p>In qui est consequatur. Eligendi inventore expedita odio cumque atque quas similique. Quibusdam commodi temporibus fuga quo. Nulla voluptatem aut harum voluptatem quo rerum sint. Voluptas consequatur laborum deleniti quisquam perferendis harum.<p></p>Culpa dicta autem. Atque voluptatum rem reiciendis sit vitae quod. Tenetur corrupti quas aliquid aut labore dolore accusamus. Placeat harum aut magnam qui.<p></p>Eos illum distinctio dolorum tempore sint est. Consequatur saepe rerum nemo. Cumque est incidunt et.<p></p>Dolor doloribus voluptatem. Temporibus molestiae architecto sunt voluptas. Mollitia et reiciendis voluptatibus autem sit quia nostrum. Doloribus dicta at itaque.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Exercitationem cupiditate consequatur quia sint sequi ad"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 1], ["body", "<p>Eum nam ipsum in voluptatem iste. Quia ullam est eius dolores fugit perspiciatis tempora. Vel debitis sint iure eos aut aut.<p></p>Rem possimus numquam. Tempora dolorem placeat libero accusantium. Modi molestiae non similique.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Sed facere inventore harum neque voluptas. Consequuntur fuga eaque sint. Ut in dolorem sed harum. Molestiae soluta et et. Aperiam beatae placeat quos in.<p></p>Sunt facilis voluptas aut veniam. A officiis voluptas praesentium id error. Nobis provident sed.<p></p>Est quisquam sapiente earum unde ut neque. Numquam beatae nihil perspiciatis officiis quis sed ea. Autem similique incidunt dolor voluptate. Est dolorum distinctio earum in ex est deserunt.<p></p>Nostrum quam quia inventore alias dolor amet. Voluptas ut quisquam vel expedita est culpa. Odio magni consequatur dolor qui consequatur ab magnam. Aut aperiam et quidem labore.<p></p>Est ea reiciendis ratione corrupti. Autem in qui voluptatum aspernatur numquam. Eos sunt reprehenderit illum qui laudantium id qui. Dolor quam et dolor distinctio atque earum suscipit. Sapiente ullam voluptatibus magnam est non.<p></p>Consequatur ut sint quos magni quidem quia. Et facilis quos deserunt. Dolor reprehenderit rerum sint. Voluptates illum recusandae. Quia velit earum nam vel.<p></p>Necessitatibus sit assumenda aut nobis culpa fugit. At eius officia harum praesentium. Delectus assumenda dicta ut molestiae enim. Non cumque cum sunt exercitationem laboriosam. Iure voluptates minus hic aut.<p></p>Qui id aspernatur et placeat autem. Accusamus omnis placeat minus ullam animi atque. Deleniti non sed nihil quia odit minima quos. Repellendus aut ut ipsam eligendi at.<p></p>Rerum ea deleniti excepturi ut at. Ab consequuntur at velit sed. Iure est beatae doloribus non eos.<p></p>Architecto omnis quo quos quod aut nam. Quisquam quis et et iste ipsam. Cumque enim dolores sit earum.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Aperiam consequuntur dolore corrupti quod"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 2], ["body", "<p>Iure officiis ex est. Temporibus delectus sapiente sint velit aspernatur. Id id est nemo facilis. Perspiciatis distinctio dicta commodi quas dolores quis cumque. Quis dignissimos inventore.<p></p>Omnis rerum fugiat quaerat. Quasi quaerat consequatur velit nostrum sint sed. Consequatur consequatur et aut maxime minus vero. Ut voluptas enim libero iure et.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 2], ["body", "<p>Et mollitia amet sunt aliquid iste illum. Enim aliquam cupiditate. Sunt ut praesentium.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "<p>Deserunt tenetur eveniet. Dolores aut explicabo vitae rerum. Ab minus quia et dolorum aliquid atque.<p></p>Expedita qui vitae. Odit incidunt nulla nemo aut numquam. Occaecati harum quia qui placeat rerum tempore. Nostrum iste voluptate ipsa dolorem ut voluptas.<p></p>Tempora illum nobis ullam quisquam quis. Expedita sed nesciunt earum eaque. Quisquam dolor praesentium consectetur aspernatur ab qui tenetur. Commodi eum harum eos explicabo. Libero magni impedit cumque enim.<p></p>Ut et ipsa earum dolor iure atque. Est in reiciendis ut molestias voluptas. Ut qui accusantium fugiat officia in et voluptas. Tempore deleniti optio sit minus pariatur.<p></p>Excepturi animi quasi assumenda. Corrupti vero quo sit veniam aut. Quam quae distinctio ut dolor quos amet et. Et alias dolorem inventore dolores nostrum velit. Reiciendis non natus.<p></p>Sed saepe recusandae quasi magni maiores quos. Aliquid quasi sed. Iusto dolorem at nisi esse occaecati. Iure modi nisi omnis autem.<p></p>Officia laboriosam sit quis sapiente velit odio. Eaque molestiae et minus laboriosam est quidem. Blanditiis maxime labore necessitatibus officiis reiciendis.<p></p>Enim sapiente non molestias. Aut consequatur et minima sapiente ducimus rem temporibus. Earum et aliquid.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Dolorum veritatis maxime molestias"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 3], ["body", "<p>Eos sunt velit quia ratione atque. Et quia blanditiis aut cupiditate. Sed dolorem enim non modi. Numquam laborum quaerat perferendis.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 3], ["body", "<p>In porro beatae voluptatibus labore quidem voluptates voluptas. Vero saepe esse dolorem cumque et et. Nihil consequatur repellat. Repellat qui consectetur aut rerum eaque itaque voluptate.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Et sed harum. Eaque voluptate inventore eligendi magni. Doloremque voluptatem nisi omnis natus.<p></p>Consectetur esse illum. Et atque est dolor. Laboriosam ex ipsum non corrupti et. Veniam ad culpa debitis ut aliquid. Alias asperiores eum rerum repellendus quae nisi.<p></p>Magnam omnis ab ullam non sed qui. Quasi dolorem sit voluptatem qui distinctio fugit laborum. Est omnis culpa qui. Velit velit unde blanditiis tempora quo quos odio.<p></p>Sit nesciunt minima. Quis ratione nam omnis ullam nisi et. Similique nisi eius ab labore. Est sequi alias nemo tempora modi libero recusandae. Dicta magnam incidunt sed quia.<p></p>Nesciunt nihil sunt. Doloribus sapiente quod ut. Harum qui id quaerat praesentium laborum. Libero dolorem et qui cum.<p></p>Est consequatur eum qui excepturi id. Velit reiciendis dolorem eius est ut quia a. Voluptas quod modi nesciunt eveniet.<p></p>Eos molestiae perspiciatis dolorem laudantium repellendus aut. Omnis saepe vel aut a. Odio esse sint voluptatibus rerum blanditiis. Delectus enim sapiente a rerum ea est dolor. Laboriosam quisquam et sunt fugit quam.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Porro rerum nemo"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 4], ["body", "<p>Officia earum omnis hic enim et laborum saepe. Voluptatum incidunt nostrum consequatur blanditiis nulla voluptatem. Quisquam ut dolores perferendis.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 4], ["body", "<p>Cupiditate delectus officia repellat a. Ipsum modi qui quidem provident nihil similique. Laboriosam distinctio voluptatum corrupti et. Labore nihil consectetur.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 4], ["body", "<p>Soluta eaque nobis exercitationem minima et dolore. Est quae cum totam occaecati. Ipsum cum cumque vel sapiente autem. Eligendi qui esse illum sit.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Vitae sint temporibus sapiente. Et minus beatae et exercitationem ab. Iusto cum corrupti repudiandae in exercitationem accusamus et. Minus sed nihil. Eum alias vero aliquam saepe ut.<p></p>Deserunt nesciunt omnis sunt recusandae blanditiis aut molestiae. Rerum doloremque qui deleniti. Non quibusdam dolorem nobis. Quasi ut vel maiores distinctio sapiente et cum. Quas adipisci tenetur quos voluptatum quaerat.<p></p>Veniam eos quibusdam. Eos vero aut id. Sint voluptatem veniam porro iusto delectus. Est dignissimos fugiat corporis ipsa reiciendis consequuntur fugit. Saepe iste et quia vel sunt corporis.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Distinctio qui deleniti nesciunt sed aliquam"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 5], ["body", "<p>Quia voluptatem ut dolorum corporis nesciunt sunt. Neque natus sit aut. Impedit aspernatur eum numquam.<p></p>Minima ut ut aut numquam ea. Cum quis enim qui dolorem ea recusandae. Modi quia mollitia voluptas.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 5], ["body", "<p>Non sunt laboriosam esse velit eos. Qui mollitia quaerat nihil et. Saepe nulla eveniet. Et id minima sit. Sit vel dolores.<p></p>Et sint nam quia. Autem possimus in qui. Deleniti sunt vero sapiente et reprehenderit. Non harum voluptatem voluptas in eum tempora dolor.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 5], ["body", "<p>Tenetur totam minima officiis. Molestiae id asperiores animi maiores temporibus. Aut eligendi sed voluptatem at veniam quis. Qui debitis architecto sit dignissimos et. Sed eaque incidunt aut vero sunt ducimus provident.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Vitae incidunt et omnis reiciendis ad. Omnis voluptatem provident et. Totam quo voluptas sed.<p></p>Odit nobis earum voluptatem eius accusamus impedit. Eum quae tempore blanditiis perspiciatis in exercitationem. Delectus animi possimus earum vel. Et totam aut.<p></p>Eius consequuntur et. Totam corrupti sapiente modi id laudantium odio. Eligendi qui porro ratione sapiente.<p></p>Dolor optio eos et. Autem et necessitatibus earum et delectus autem. Distinctio voluptas ea. Sint iste sit est modi.<p></p>Id molestiae repellat in sequi incidunt. Vitae animi maxime. Cupiditate similique fugit. Amet in excepturi eligendi consectetur qui natus blanditiis.<p></p>Qui quod rem ea ut. Facilis quia natus praesentium ut temporibus necessitatibus est. Fugiat rem officiis quidem. Corrupti asperiores laboriosam voluptatem dolorem.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Rem a magni ut sunt ullam quia"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 6], ["body", "<p>Et aut maiores ut quia. Eveniet consequatur ea. Iusto eaque incidunt ipsam sapiente rerum qui minima. Rerum perferendis enim et nostrum nam.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "<p>Qui atque voluptas qui sint. Et qui sit. Nemo quibusdam et illum voluptatibus. Qui beatae sequi hic sunt nemo.<p></p>Molestiae delectus labore sit qui odio voluptatem. Ex fuga excepturi. Temporibus quasi rerum error et quidem vero.<p></p>Maxime error esse veritatis molestiae. Qui labore et saepe perferendis unde sit quia. Eos beatae voluptatem nobis nihil unde deleniti.<p></p>Quae explicabo autem. Consequatur alias aut est molestiae sint ullam possimus. Et et doloremque omnis quas. Qui molestiae cum a temporibus est. Voluptates et quidem rerum tenetur aut dicta non.<p></p>Eveniet qui exercitationem iure quos asperiores eligendi. Atque ut nesciunt omnis labore veniam. Doloremque dolor aliquid cupiditate iusto. A sit est nihil consectetur. Consequatur et doloribus consequatur vitae eum dicta alias.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Id repellat dolorem"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 7], ["body", "<p>Laborum qui et aliquid. Reprehenderit vitae officiis in. Est neque labore nesciunt qui ex saepe.<p></p>Dolorem ut molestias praesentium qui ipsum. Consequuntur blanditiis est dolorem expedita. Placeat maiores et dicta eos eveniet.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 7], ["body", "<p>Aut labore eum et maiores sit voluptate. Non rerum voluptatem et voluptatem et. Dolores temporibus ducimus numquam fuga cumque ut. Maxime sint cumque consequatur. Est accusamus quis.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 7], ["body", "<p>Libero provident quo id quia aut. Doloribus in quo sunt molestiae a. Sed possimus ut.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 7], ["body", "<p>Sit accusantium provident pariatur delectus architecto. Ea et et eius fugiat. Quidem facere ut possimus.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "<p>Et voluptas occaecati veniam dolore nihil aut. Maiores voluptates modi officiis voluptas nam molestiae eos. Nostrum quaerat ut eius odit alias qui ad. Rem laudantium delectus debitis non. Dolores nisi doloremque ut.<p></p>Quo sit nihil. Rerum sint libero inventore et recusandae officiis. Reiciendis culpa vel. Et ut eos.<p></p>Et quo ratione. Hic sed enim consectetur corrupti velit. Qui saepe aut ut. Temporibus sit quisquam. Illo qui quaerat est exercitationem tenetur sint.<p></p>Quam molestias repellendus. Minus et ab sint occaecati laudantium nostrum et. Sed magni quas voluptatem ex. Alias autem velit ex. Pariatur omnis aspernatur aut velit ut sed cupiditate.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Optio qui fugit molestiae ea velit quas"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 8], ["body", "<p>Reiciendis id eveniet tenetur nulla provident. Fugiat omnis aut quidem expedita commodi et quae. Consequuntur neque modi similique maxime voluptatem nisi officiis. Velit saepe occaecati quos dignissimos cum ea amet. Aut impedit adipisci.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "<p>Sit nesciunt eos hic. Eligendi voluptas nam provident asperiores ut voluptates temporibus. Magni praesentium possimus nesciunt sed mollitia. Autem sed totam aliquam nostrum qui nisi sunt. Quae aut quam.<p></p>Occaecati et quaerat repellendus corrupti voluptate. In omnis velit nihil enim. Nihil molestias deserunt rem. Id libero a. Atque deserunt debitis libero ut.<p></p>Et est praesentium asperiores ut sed deleniti itaque. Possimus nostrum similique tenetur in aut quo et. Quo voluptates velit.<p></p>Cum aut molestiae recusandae. Quae similique itaque iure vel porro quia. Aut reiciendis quis nam. Rerum at sapiente officiis quos molestias.<p></p>Modi ut corporis aperiam voluptas. Eveniet et voluptatem sed sed. Beatae maxime rerum. Vitae ut ex id laborum praesentium eos excepturi. Veritatis quae aut iusto perspiciatis explicabo aliquid.<p></p>Perspiciatis sunt earum eligendi facilis qui. Consequatur corporis incidunt rerum dolor sed. Qui nobis id sit est architecto est temporibus. Sequi accusamus aliquid.<p></p>Rerum dicta eius qui adipisci ut provident repudiandae. Labore iure nemo odio consequatur optio. Dolor et quasi.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Praesentium facere voluptatem est et non"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 9], ["body", "<p>Ad et quibusdam quis magni enim. Sint ea ab voluptatem explicabo quos. Rerum facilis magnam qui non. Sapiente qui natus repellat sed asperiores enim.<p></p>Et iure voluptatem fuga nihil voluptas doloremque qui. Delectus numquam eveniet. Eveniet porro rerum qui sit corporis vitae. Voluptate reprehenderit nostrum est atque in non debitis.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "<p>Ab impedit error voluptatibus harum. Laboriosam perferendis voluptas deserunt officiis reprehenderit voluptatum et. Vel velit autem nihil corrupti commodi.<p></p>Ab rerum vitae rem. Voluptate rerum aut non maxime et. Et vel laborum quia fugit animi veritatis. Exercitationem id odio quia iste velit aliquid. Amet unde nesciunt consectetur qui sit quaerat libero.<p></p>Perferendis rerum enim. Voluptatem voluptatum deleniti nihil corporis sunt et odio. Amet magnam eos quo nesciunt accusamus. Illum dolor labore. Rerum animi qui.<p></p>Repudiandae iure consequatur quos culpa reprehenderit. Accusamus nesciunt ipsam perferendis adipisci nostrum. Porro deserunt autem rem corporis doloribus voluptatem eius. Nostrum quia quis possimus animi earum excepturi.<p></p>Qui rerum et mollitia. Velit nihil qui numquam nostrum voluptates voluptatem minima. Natus sint quae deserunt. Repellat explicabo in aut aut et. Consectetur nihil voluptatem et harum qui.<p></p>Aspernatur minus ut porro quia cumque nihil. Omnis quo ea porro aut adipisci deserunt saepe. Corporis sequi dolor voluptatum. Aperiam laborum sapiente velit. Qui rerum eos corrupti praesentium eveniet aut eius.<p></p>Dolor laudantium sit qui ut sed. Est deleniti veniam est aut quasi voluptatem optio. Occaecati consequatur repudiandae id.<p></p>Fugiat nam eum fugit minima accusamus. Deleniti voluptatem ipsam non eaque. Quasi sit eius fugiat.<p></p>Dolore corporis autem consectetur dolorem. Quod ea harum est facere dolorum incidunt. Necessitatibus quam repellendus quo. Officiis non sint et et corrupti aspernatur. Hic aspernatur repellat quo in voluptate eveniet.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["title", "Provident facilis enim assumenda vel ratione"], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 10], ["body", "<p>Dolores qui veniam ut quibusdam. Nostrum doloremque accusamus aut fuga repellat et. Aspernatur est illo.<p></p>Unde quasi vero. Sed aliquam distinctio architecto et. Officiis sapiente dolor.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 10], ["body", "<p>Est nihil quasi quod. Qui nesciunt hic. Et qui velit cumque aut tenetur. Hic adipisci voluptates eaque.<p></p>Et cumque unde. Saepe voluptatem praesentium nobis itaque qui unde. Iste non voluptatem voluptatem laudantium facilis. Vero deserunt beatae et qui aut. Et aut vel consequuntur similique rem possimus.</p>"], ["created_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00], ["updated_at", Wed, 21 Nov 2012 00:17:00 UTC +00:00]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /articles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /articles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-20 16:17:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.3ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.5ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.3ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.0ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.9ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.5ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.6ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (148.0ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.8ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (2.0ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.0ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (2.3ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.6ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.9ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.9ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("sessions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (1.6ms)[0m  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121109200444')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121027202229')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121027213058')[0m
